@@ -1,6 +1,6 @@
   type Query {
           info: String!
-          feed: [Link!]!
+          feed(filter: String): [Link!]!
   }
 
   type Mutation {
@@ -16,15 +16,6 @@
           url: String!
           postedBy: User
           votes: [Vote!]!
-  }
-  
-  type Query {
-          link(id: ID!): Link
-  }
-
-  type Mutation {
-          updateLink(id: ID!, url: String, description: String): Link
-          deleteLink(id: ID!): Link
   }
 
   type AuthPayload {
